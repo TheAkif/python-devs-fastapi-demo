@@ -30,7 +30,7 @@ jobs:
             pre-commit install -t pre-commit
       - run:
           name: Run Pre-commit Hooks
-          command: pre-commit run --all-files --files $(git diff --name-only HEAD~1)
+          command: pre-commit run --files $(git diff --name-only HEAD~1)
       - run:
           name: Run tests
           command: pipenv run python -m pytest 

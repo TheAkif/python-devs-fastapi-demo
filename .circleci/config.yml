@@ -24,6 +24,9 @@ jobs:
           name: Install dependencies
           command: pipenv install
       - run:
+          name: Run Pre-commit Hooks
+          command: pre-commit run --all-files
+      - run:
           name: Run tests
           command: pipenv run python -m pytest 
           environment:

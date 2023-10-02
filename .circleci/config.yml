@@ -24,6 +24,11 @@ jobs:
           name: Install dependencies
           command: pipenv install
       - run:
+          name: Install Pre-commit
+          command: |
+            pip install pre-commit
+            pre-commit install -t pre-commit
+      - run:
           name: Run Pre-commit Hooks
           command: pre-commit run --all-files
       - run:
